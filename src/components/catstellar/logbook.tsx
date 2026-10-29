@@ -54,11 +54,12 @@ export function Logbook() {
           <div className="lg:col-span-5">
             <p className="text-xs tracking-widest text-gold uppercase">Log</p>
             <h2 className="mt-3 font-display text-4xl leading-tight font-medium italic sm:text-6xl">
-              File the stills.
+              File the stills. Keep the box.
             </h2>
             <p className="mt-4 text-mist">
-              Eleven frames. Tap one to file it. It stays in this browser. It
-              does not pay you, rank you, or move a price.
+              Eleven frames. Tap one to file it. It stays in this browser, not
+              on the chain. No pay, no rank, no price. The real burn comes later,
+              in the recorder, and only after the token exists.
             </p>
             <label className="mt-8 block">
               <span className="text-xs tracking-widest text-mist uppercase">Call sign</span>
@@ -66,7 +67,7 @@ export function Logbook() {
                 value={sign}
                 maxLength={16}
                 onChange={(event) => saveSign(event.target.value)}
-                placeholder="Unnamed suit"
+                placeholder="Name the suit"
                 autoComplete="off"
                 className="mt-2 w-full border-b border-line bg-transparent py-3 font-display text-3xl text-cream italic outline-none placeholder:text-mist focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               />
@@ -78,7 +79,7 @@ export function Logbook() {
             <p className="mt-2 text-sm text-mist">
               {sign.trim()
                 ? `${sign.trim()} is on the sheet.`
-                : "No call sign yet. The water does not require one."}
+                : "No call sign yet. The water does not take attendance."}
             </p>
           </div>
           <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:col-span-7">

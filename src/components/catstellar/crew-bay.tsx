@@ -12,11 +12,11 @@ export function CrewBay({ crew }: { crew: CrewMember[] }) {
         <div className="lg:col-span-5">
           <p className="text-xs tracking-widest text-gold uppercase">Crew</p>
           <h2 className="mt-3 font-display text-4xl leading-tight font-medium italic sm:text-6xl">
-            Five suits. No payroll.
+            Five suits. The box stays.
           </h2>
           <p className="mt-4 text-mist">
-            Names stitched on fabric are folklore. Pick a call sign. The still
-            changes. Nothing on-chain does.
+            Call signs are folklore stitched onto fabric. Pick one. The still
+            changes. The chain does not.
           </p>
           <ul className="mt-8 divide-y divide-line border-y border-line">
             {crew.map((person, index) => {

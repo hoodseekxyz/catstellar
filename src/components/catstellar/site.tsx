@@ -74,15 +74,15 @@ function Hero() {
               Catstellar
             </h1>
             <p className="mt-5 max-w-xl text-lg text-cream sm:text-xl">
-              Nine lives. One curve. A litter came down in open water on Robinhood Chain.
-              The suits are costume. The curve is the mechanism.
+              Interstellar had a wormhole. We have a litter, nine lives, and a curve.
+              The suits are costume. The box stays.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#curve"
                 className="inline-flex min-h-11 items-center bg-gold px-5 py-3 text-sm font-medium text-ink"
               >
-                Read the curve
+                See the curve
               </a>
               <a
                 href={links.x}
@@ -98,10 +98,10 @@ function Hero() {
           </div>
           <ol className="hidden gap-3 text-sm lg:col-span-4 lg:grid lg:justify-self-end">
             {[
-              ["01", "Mission", "How they got in the water"],
-              ["02", "Crew", "Five call signs, no ranks that pay"],
-              ["03", "Curve", "A drawing of the Pons path"],
-              ["04", "Log", "File the stills on this device"],
+              ["01", "Mission", "How a space movie got wet"],
+              ["02", "Crew", "Five cats. Zero payroll."],
+              ["03", "Curve", "The wormhole, drawn. Not live."],
+              ["04", "Log", "File the stills. This browser only."],
             ].map(([n, title, note]) => (
               <li key={n} className="border-t border-cream/25 pt-3">
                 <p className="text-xs tracking-widest text-gold">{n}</p>
@@ -122,12 +122,12 @@ function Mission() {
       <div className="max-w-2xl">
         <p className="text-xs tracking-widest text-gold uppercase">Mission</p>
         <h2 className="mt-3 font-display text-4xl leading-tight font-medium italic sm:text-6xl">
-          The picture is the lure.
+          Not the film. The litter.
         </h2>
         <p className="mt-5 text-lg text-mist">
-          The contract is the only name that cannot be faked. Until that address
-          is posted, Catstellar is a reel — on Robinhood Chain, through Pons,
-          and nowhere else that matters.
+          A space epic came back as cats. The only name that cannot be copied is
+          the token address. Until it is posted, Catstellar is a reel — Pons,
+          Robinhood Chain, and a box nobody drops.
         </p>
       </div>
       <div className="mt-16 grid gap-20">
@@ -184,7 +184,7 @@ function BreakStill() {
           <div>
             <p className="text-xs tracking-widest text-gold uppercase">Reel 06 · Vector</p>
             <p className="mt-2 max-w-md font-display text-3xl italic sm:text-4xl">
-              Paws out. Price is not a direction.
+              Paws out. The wormhole is not a direction.
             </p>
           </div>
         </div>
@@ -198,11 +198,11 @@ function Close() {
     <footer className="border-t border-line">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:grid-cols-12">
         <div className="sm:col-span-7">
-          <p className="font-display text-4xl italic sm:text-5xl">Not a security.</p>
+          <p className="font-display text-4xl italic sm:text-5xl">Not a security. A litter.</p>
           <p className="mt-4 max-w-xl text-mist">
-            Catstellar is a meme on a curve. No yield, no team allocation hiding
-            in a vest you cannot see, no promise that the water goes down. Art
-            is the project. The chain is the receipt.
+            Catstellar is a meme on a curve. No yield. No hidden vest. No promise
+            the water goes down. The film stays in the theater. The box stays
+            here. The chain is the receipt.
           </p>
         </div>
         <ul className="space-y-3 text-sm sm:col-span-5 sm:justify-self-end">

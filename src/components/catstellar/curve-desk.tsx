@@ -75,13 +75,13 @@ export function CurveDesk() {
           <div className="lg:col-span-5">
             <p className="text-xs tracking-widest text-gold uppercase">Curve desk</p>
             <h2 className="mt-3 font-display text-4xl leading-tight font-medium italic sm:text-6xl">
-              The curve is the runway.
+              The wormhole is a curve.
             </h2>
             <p className="mt-4 text-mist">
-              On {chain.venue} the supply sits on a bonding curve. Buys lift the
-              price. Sells ease it. When the curve sells out, it graduates:
-              collected funds and a reserved share seed a {chain.pool} pool, and
-              that liquidity is locked. This drawing is not that curve.
+              On {chain.venue} the supply sits on a bonding curve. Buys lift it.
+              Sells ease it. Sell out, and it graduates: what the curve collected,
+              plus a reserved share, seed a {chain.pool} pool. That liquidity
+              locks. This slider is a toy. The wormhole is not.
             </p>
             <dl className="mt-8 divide-y divide-line border-y border-line">
               {facts.map((fact) => (
@@ -157,8 +157,8 @@ export function CurveDesk() {
 
             <p className="mt-2 text-sm text-mist" aria-live="polite">
               {fill >= 100
-                ? "Sold through. On a real Pons launch this is graduation: the pool is seeded and the liquidity locks."
-                : `${100 - fill}% of this drawing is still on the curve. Graduation is the far end, not a mood.`}
+                ? "Sold out. On a real Pons launch that is graduation: the pool is seeded and the liquidity locks. No unlock button."
+                : `${100 - fill}% of this drawing is still on the curve. Graduation is the far end, not a vibe.`}
             </p>
 
             <div className="mt-8 border-t border-line pt-6">
@@ -186,8 +186,8 @@ export function CurveDesk() {
                 <div className="h-px bg-gold" style={{ width: `${tax}%` }} />
               </div>
               <p className="mt-3 text-sm text-mist">
-                Opening buys on Pons can pay a tax that starts near 99% and falls
-                to zero in about five seconds. Bots eat the hurry. Waiting is allowed.
+                Opening buys can eat a tax near 99%. It dies in about five seconds.
+                Bots eat the hurry. You are allowed to wait. The cat would.
               </p>
             </div>
           </div>
@@ -202,11 +202,11 @@ export function CurveDesk() {
               <a className="text-cream underline decoration-line underline-offset-4 hover:text-gold" href={links.x}>
                 @catstellarX
               </a>
-              . The flight recorder on the splash is not the token. Until the token line is filled, a ticker is a costume.
+              . The flight recorder on the splash is not the token. Until the token line is filled, the ticker is a costume.
             </p>
             <p className="mt-4 text-sm text-mist">
-              Chain {chain.name} · {chain.id}. Public Pons launches have been
-              whitelisted. A website does not put you on that list.
+              Chain {chain.name} · {chain.id}. A public Pons launch needs the
+              whitelist. A website cannot sneak you onto it.
             </p>
           </div>
           <fieldset className="lg:col-span-7">
@@ -234,10 +234,10 @@ export function CurveDesk() {
             <p className="mt-5 text-sm" aria-live="polite">
               {cleared ? (
                 <a className="text-gold hover:text-cream" href={links.x}>
-                  Cleared to watch the curve on X.
+                  Cleared. Watch the curve on X. Still not a buy button.
                 </a>
               ) : (
-                <span className="text-mist">Four lines. Then the only honest button is a link.</span>
+                <span className="text-mist">Four boxes. Then the only honest button is a link.</span>
               )}
             </p>
           </fieldset>

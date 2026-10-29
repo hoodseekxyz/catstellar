@@ -58,7 +58,7 @@ export const crew: CrewMember[] = [
     role: "Command",
     still: "/stills/cooper.jpg",
     alt: "An orange-and-white kitten in a snow-dusted suit, walking a ridge.",
-    line: "Walks into weather and calls it a commute. The patch says Cooper. The chain will not care what the patch says.",
+    line: "Walks into the weather and calls it a commute. The patch says Cooper. The chain cannot read patches.",
   },
   {
     id: "brand",
@@ -66,7 +66,7 @@ export const crew: CrewMember[] = [
     role: "Navigation",
     still: "/stills/bridge.jpg",
     alt: "Three suited kittens at a metal table inside a ship, one pointing.",
-    line: "Points at the table until the room picks a heading. On a curve, heading is just price moving.",
+    line: "Points at the table until the room picks a heading. On a curve, heading is just the price moving. She points anyway.",
   },
   {
     id: "doyle",
@@ -74,7 +74,7 @@ export const crew: CrewMember[] = [
     role: "Systems",
     still: "/stills/archive.jpg",
     alt: "A tabby in a worn helmet, paw on a dark library shelf.",
-    line: "Reads the shelf before the speech. Systems asks one question: who holds the liquidity, and does it unlock.",
+    line: "Reads the shelf before the speech. Then the only grown-up question: who holds the liquidity, and does it unlock.",
   },
   {
     id: "flare",
@@ -82,7 +82,7 @@ export const crew: CrewMember[] = [
     role: "Recovery",
     still: "/stills/flare.jpg",
     alt: "A kitten in a visor grips an orange case while waves break over a raft.",
-    line: "Orange box. Open mouth. A beacon is a location, not a guarantee that anyone is coming.",
+    line: "Orange box. Mouth open. The beacon says where we are. It does not promise a rescue. The box stays anyway.",
   },
   {
     id: "vector",
@@ -90,7 +90,7 @@ export const crew: CrewMember[] = [
     role: "Pilot",
     still: "/stills/vector.jpg",
     alt: "A tabby in a flight suit reaches toward the camera through a shaft of city light.",
-    line: "City lights stacked like a runway stood on end. Velocity is not the same thing as a plan.",
+    line: "Paws out. The city is a runway stood on end. Fast is not a plan. The cat has not heard this.",
   },
 ];
 
@@ -105,31 +105,31 @@ export type Chapter = {
 export const chapters: Chapter[] = [
   {
     slate: "01",
-    title: "Before the visor",
+    title: "The truck",
     still: "/stills/before.jpg",
     alt: "Two kittens in jackets beside a dusty truck on a dirt road at dusk.",
-    body: "A dirty truck, a corn row, no patches yet. Every launch starts smaller than the poster. The costume comes later. The habit of looking at each other comes first.",
+    body: "Corn, dust, two jackets, no patches yet. Every meme starts smaller than the poster. The costume comes later. The truck stays in the shot.",
   },
   {
     slate: "02",
     title: "Splashdown",
     still: "/stills/shore.jpg",
     alt: "A suited cat stands in the sea at sunset, another figure and a hull farther out, the Milky Way above.",
-    body: "Sunset on the left. A hull on the right. Two of them already in the drink. A strange place to call a runway, and the only one this reel has.",
+    body: "They needed a runway. They got an ocean. Two suits already in the drink, a hull on the horizon. Strange planet. Correct meme.",
   },
   {
     slate: "03",
     title: "The wall",
     still: "/stills/wall.jpg",
     alt: "A small suited kitten in the water faces a towering wave under a warm sky.",
-    body: "Some of the work is standing in it. The wave does not negotiate. A curve does not either, once you have bought it.",
+    body: "The wave does not negotiate. A curve does not either, once you have bought it. Stand in it or don't. The water has no opinion.",
   },
   {
     slate: "04",
     title: "The ridge",
     still: "/stills/ascent.jpg",
     alt: "Four kittens in white packs climb a pale, broken mountain at golden hour.",
-    body: "After the water, rock. Four packs. Nobody carried a promise up that ridge. They carried the walk.",
+    body: "After the drink, rock. Four packs. Nobody carried a promise up that ridge. They carried the walk, and somehow the box.",
   },
 ];
 
@@ -156,17 +156,17 @@ export const frames: Frame[] = [
 ];
 
 export const preflight = [
-  { id: "desk", label: "This desk does not trade. Nothing here moves a token." },
-  { id: "grad", label: "Liquidity locks only if the curve actually graduates." },
-  { id: "ca", label: "The contract address is the name. A ticker can be copied by anyone." },
-  { id: "tax", label: "A creator tax, if one is set, is fixed at launch and does not grow later." },
+  { id: "desk", label: "This desk does not trade. The kitten cannot touch your wallet." },
+  { id: "grad", label: "Liquidity locks only if the curve actually sells out." },
+  { id: "ca", label: "The address is the name. A ticker is a costume anyone can sew." },
+  { id: "tax", label: "A creator tax, if there is one, freezes at launch. It does not grow." },
 ] as const;
 
 export const facts: { term: string; detail: string }[] = [
-  { term: "Venue", detail: "Pons v2. The public buys a bonding curve. Pons never holds the wallet." },
-  { term: "Chain", detail: "Robinhood Chain, id 4663." },
-  { term: "After the curve", detail: "Sell-out graduates into a Uniswap v4 pool. Reserved tokens and collected funds seed it." },
-  { term: "Lock", detail: "That liquidity is locked. A picture of a lock on a website is not the lock. The pool is." },
-  { term: "Open", detail: "Early buys can meet a snipe tax near 99%, decaying to zero in about five seconds." },
-  { term: "Fees", detail: "A trading fee can split across protocol, buyback, and creator. Buybacks, if used, vest over years." },
+  { term: "Venue", detail: "Pons v2. The public buys a curve. Pons never holds the wallet." },
+  { term: "Chain", detail: "Robinhood Chain, id 4663. The water is on this chain only." },
+  { term: "After the curve", detail: "Sell-out graduates into a Uniswap v4 pool. Reserved tokens and what the curve collected seed it." },
+  { term: "Lock", detail: "That liquidity locks. A padlock drawn on a website is not the lock. The pool is." },
+  { term: "Open", detail: "Early buys can meet a tax near 99%. It falls to zero in about five seconds. Waiting is allowed." },
+  { term: "Fees", detail: "A trading fee can split across protocol, buyback, and creator. Buybacks, if used, vest for years." },
 ];

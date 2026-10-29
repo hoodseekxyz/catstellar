@@ -25,7 +25,7 @@ export function ContractPlate() {
         <PlateRow
           label="Token"
           value={contracts.token}
-          empty="Pending. The curve has not opened."
+          empty="Pending. The wormhole is not open."
           copied={copied === "token"}
           onCopy={
             contracts.token ? () => copy("token", contracts.token as string) : undefined
@@ -34,7 +34,7 @@ export function ContractPlate() {
         <PlateRow
           label="Flight recorder"
           value={contracts.recorder}
-          hint="Not the token. One filing burns 1,000."
+          hint="Not the token. A filing burns 1,000."
           copied={copied === "recorder"}
           onCopy={() => copy("recorder", contracts.recorder)}
         />
