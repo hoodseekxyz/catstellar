@@ -3,6 +3,7 @@ import { chapters, crew, links } from "@/data/mission";
 import { CurveDesk } from "@/components/catstellar/curve-desk";
 import { CrewBay } from "@/components/catstellar/crew-bay";
 import { Logbook } from "@/components/catstellar/logbook";
+import { ContractPlate } from "@/components/catstellar/contract-plate";
 
 const nav = [
   { href: "#mission", label: "Mission" },
@@ -57,7 +58,7 @@ export function Site() {
 
 function Hero() {
   return (
-    <section id="top" className="relative flex min-h-0 flex-1 flex-col">
+    <section id="top" className="relative flex flex-1 flex-col">
       <img
         src="/stills/splash.jpg"
         alt="An orange-and-white kitten in a white suit stands in open water at sunset, a dark craft behind."
@@ -90,6 +91,9 @@ function Hero() {
                 @catstellarX
                 <ArrowUpRight className="size-4" aria-hidden="true" />
               </a>
+            </div>
+            <div className="mt-6">
+              <ContractPlate />
             </div>
           </div>
           <ol className="hidden gap-3 text-sm lg:col-span-4 lg:grid lg:justify-self-end">

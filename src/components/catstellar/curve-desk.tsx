@@ -196,13 +196,13 @@ export function CurveDesk() {
         <div className="mt-16 grid gap-8 border-t border-line pt-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <p className="text-xs tracking-widest text-gold uppercase">Contract</p>
-            <p className="mt-3 font-display text-3xl italic sm:text-4xl">Address pending.</p>
+            <p className="mt-3 font-display text-3xl italic sm:text-4xl">Token pending.</p>
             <p className="mt-3 text-mist">
-              It lands with the curve, first on{" "}
+              The token address lands with the curve, first on{" "}
               <a className="text-cream underline decoration-line underline-offset-4 hover:text-gold" href={links.x}>
                 @catstellarX
               </a>
-              . Until then, anyone waving a contract is waving a costume.
+              . The flight recorder on the splash is not the token. Until the token line is filled, a ticker is a costume.
             </p>
             <p className="mt-4 text-sm text-mist">
               Chain {chain.name} · {chain.id}. Public Pons launches have been

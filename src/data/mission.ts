@@ -4,6 +4,17 @@ export const links = {
   pons: "https://docs.ponsfamily.com/v2",
 } as const;
 
+/** Token stays null until the Pons launch address is pasted in. */
+export const contracts: {
+  token: string | null;
+  recorder: string;
+  explorer: string;
+} = {
+  token: null,
+  recorder: "0xd4F51a5b61A2590573a3d472C2bB5B8F39b7f077",
+  explorer: "https://robin.etherscan.io/address/",
+};
+
 export const chain = {
   name: "Robinhood Chain",
   id: "4663",
