@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Catstellar">
+  <rect width="32" height="32" rx="7" fill="#0c1016"/>
+  <polygon points="6,16 11,4 16,16" fill="#f3ead7"/>
+  <polygon points="16,16 21,4 26,16" fill="#f3ead7"/>
+  <polygon points="8.2,13.6 11,6.6 13.8,13.6" fill="#c45c2a"/>
+  <polygon points="18.2,13.6 21,6.6 23.8,13.6" fill="#c45c2a"/>
+  <circle cx="16" cy="20" r="8.4" fill="#f3ead7"/>
+  <rect x="8" y="18.2" width="16" height="6" rx="3" fill="#e8a04a"/>
+</svg>
