@@ -2,7 +2,6 @@ export const links = {
   x: "https://x.com/catstellarX",
   site: "https://catstellar.xyz",
   pons: "https://docs.ponsfamily.com/v2",
-  github: "https://github.com/hoodseekxyz",
 } as const;
 
 export const chain = {

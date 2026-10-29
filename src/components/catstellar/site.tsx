@@ -200,9 +200,6 @@ function Close() {
             in a vest you cannot see, no promise that the water goes down. Art
             is the project. The chain is the receipt.
           </p>
-          <p className="mt-4 max-w-xl text-cream">
-            Bu sayfa bir ticaret ekranı değil. Eğri, mezuniyet ve kilit — gerisi kostüm.
-          </p>
         </div>
         <ul className="space-y-3 text-sm sm:col-span-5 sm:justify-self-end">
           <li>
@@ -214,12 +211,6 @@ function Close() {
           <li>
             <a className="inline-flex items-center gap-1 text-cream hover:text-gold" href={links.pons}>
               Pons v2 docs
-              <ArrowUpRight className="size-4" aria-hidden="true" />
-            </a>
-          </li>
-          <li>
-            <a className="inline-flex items-center gap-1 text-cream hover:text-gold" href={links.github}>
-              github.com/hoodseekxyz
               <ArrowUpRight className="size-4" aria-hidden="true" />
             </a>
           </li>
