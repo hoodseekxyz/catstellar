@@ -4,13 +4,13 @@ export const links = {
   pons: "https://docs.ponsfamily.com/v2",
 } as const;
 
-/** Token stays null until the Pons launch address is pasted in. */
+/** Pons v2 token. Still on the curve until phase is PoolCreated. */
 export const contracts: {
   token: string | null;
   recorder: string;
   explorer: string;
 } = {
-  token: null,
+  token: "0x25c8716D866d0417f344a3943368b1b3eFB60FC1",
   recorder: "0xd4F51a5b61A2590573a3d472C2bB5B8F39b7f077",
   explorer: "https://robin.etherscan.io/address/",
 };

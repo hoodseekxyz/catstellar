@@ -25,7 +25,7 @@ export function ContractPlate() {
         <PlateRow
           label="Token"
           value={contracts.token}
-          empty="Pending. The wormhole is not open."
+          hint="CATSTELLAR. On the curve. Paired with ETH."
           copied={copied === "token"}
           onCopy={
             contracts.token ? () => copy("token", contracts.token as string) : undefined

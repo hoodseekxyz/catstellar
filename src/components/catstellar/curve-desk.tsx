@@ -3,6 +3,7 @@ import * as Slider from "@radix-ui/react-slider";
 import { Area, AreaChart, ReferenceLine, ResponsiveContainer, XAxis, YAxis } from "recharts";
 import {
   chain,
+  contracts,
   curveSeries,
   facts,
   formatPicture,
@@ -195,14 +196,16 @@ export function CurveDesk() {
 
         <div className="mt-16 grid gap-8 border-t border-line pt-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <p className="text-xs tracking-widest text-gold uppercase">Contract</p>
-            <p className="mt-3 font-display text-3xl italic sm:text-4xl">Token pending.</p>
+            <p className="text-xs tracking-widest text-gold uppercase">Token</p>
+            <p className="mt-3 font-display text-3xl italic sm:text-4xl">The wormhole is open.</p>
+            <a
+              href={`${contracts.explorer}${contracts.token}`}
+              className="mt-3 block text-sm break-all text-cream underline decoration-line underline-offset-4 hover:text-gold"
+            >
+              {contracts.token}
+            </a>
             <p className="mt-3 text-mist">
-              The token address lands with the curve, first on{" "}
-              <a className="text-cream underline decoration-line underline-offset-4 hover:text-gold" href={links.x}>
-                @catstellarX
-              </a>
-              . The flight recorder on the splash is not the token. Until the token line is filled, the ticker is a costume.
+              This is $CATSTELLAR. One billion. Paired with ETH. Still on the curve, so it has not graduated and the pool is not locked yet. The flight recorder is a different address. A ticker without this line is a costume.
             </p>
             <p className="mt-4 text-sm text-mist">
               Chain {chain.name} · {chain.id}. A public Pons launch needs the
