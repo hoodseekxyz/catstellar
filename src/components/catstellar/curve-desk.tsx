@@ -3,7 +3,6 @@ import * as Slider from "@radix-ui/react-slider";
 import { Area, AreaChart, ReferenceLine, ResponsiveContainer, XAxis, YAxis } from "recharts";
 import {
   chain,
-  contracts,
   curveSeries,
   facts,
   formatPicture,
@@ -79,10 +78,8 @@ export function CurveDesk() {
               The wormhole is a curve.
             </h2>
             <p className="mt-4 text-mist">
-              On {chain.venue} the supply sits on a bonding curve. Buys lift it.
-              Sells ease it. Sell out, and it graduates: what the curve collected,
-              plus a reserved share, seed a {chain.pool} pool. That liquidity
-              locks. This slider is a toy. The wormhole is not.
+              The litter launches on {chain.venue}. This slider is a drawing of a
+              line getting steeper. It is not a price, not a pool, and not a promise.
             </p>
             <dl className="mt-8 divide-y divide-line border-y border-line">
               {facts.map((fact) => (
@@ -158,7 +155,7 @@ export function CurveDesk() {
 
             <p className="mt-2 text-sm text-mist" aria-live="polite">
               {fill >= 100
-                ? "Sold out. On a real Pons launch that is graduation: the pool is seeded and the liquidity locks. No unlock button."
+                ? "Far end of the drawing. The real pool is the one that opens with the launch. This page does not open it."
                 : `${100 - fill}% of this drawing is still on the curve. Graduation is the far end, not a vibe.`}
             </p>
 
@@ -187,8 +184,7 @@ export function CurveDesk() {
                 <div className="h-px bg-gold" style={{ width: `${tax}%` }} />
               </div>
               <p className="mt-3 text-sm text-mist">
-                Opening buys can eat a tax near 99%. It dies in about five seconds.
-                Bots eat the hurry. You are allowed to wait. The cat would.
+                A five-second hurry, replayed. A gag. Not the launch rule.
               </p>
             </div>
           </div>
@@ -197,19 +193,13 @@ export function CurveDesk() {
         <div className="mt-16 grid gap-8 border-t border-line pt-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <p className="text-xs tracking-widest text-gold uppercase">Token</p>
-            <p className="mt-3 font-display text-3xl italic sm:text-4xl">The wormhole is open.</p>
-            <a
-              href={`${contracts.explorer}${contracts.token}`}
-              className="mt-3 block text-sm break-all text-cream underline decoration-line underline-offset-4 hover:text-gold"
-            >
-              {contracts.token}
-            </a>
+            <p className="mt-3 font-display text-3xl italic sm:text-4xl">Address not on this page.</p>
             <p className="mt-3 text-mist">
-              This is $CATSTELLAR. One billion. Paired with ETH. Still on the curve, so it has not graduated and the pool is not locked yet. The flight recorder is a different address. A ticker without this line is a costume.
-            </p>
-            <p className="mt-4 text-sm text-mist">
-              Chain {chain.name} · {chain.id}. A public Pons launch needs the
-              whitelist. A website cannot sneak you onto it.
+              When the launch is real, the line lands on{" "}
+              <a className="text-cream underline decoration-line underline-offset-4 hover:text-gold" href={links.x}>
+                @catstellarX
+              </a>
+              . Until then, a ticker is a costume. Nothing here is the token.
             </p>
           </div>
           <fieldset className="lg:col-span-7">

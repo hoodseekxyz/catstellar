@@ -14,7 +14,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Catstellar — a space film retold as a cat meme on a Pons curve. Nine lives. The box stays. Not a security.",
+          "Catstellar — a space film retold as a cat meme. Nine lives. The box stays. Not a security.",
       },
       { name: "theme-color", content: "#0c1016" },
     ],

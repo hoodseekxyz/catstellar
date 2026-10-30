@@ -1,28 +1,15 @@
 export const links = {
   x: "https://x.com/catstellarX",
   site: "https://catstellar.xyz",
-  pons: "https://docs.ponsfamily.com/v2",
 } as const;
-
-/** Pons v2 token. Still on the curve until phase is PoolCreated. */
-export const contracts: {
-  token: string | null;
-  recorder: string;
-  explorer: string;
-} = {
-  token: "0x25c8716D866d0417f344a3943368b1b3eFB60FC1",
-  recorder: "0xd4F51a5b61A2590573a3d472C2bB5B8F39b7f077",
-  explorer: "https://robin.etherscan.io/address/",
-};
 
 export const chain = {
   name: "Robinhood Chain",
   id: "4663",
-  venue: "Pons v2",
-  pool: "Uniswap v4",
+  venue: "long.xyz",
 } as const;
 
-/** Illustrative only. Not the on-chain Pons formula and not a quote. */
+/** Illustrative only. Not a quote and not the launch. */
 export function illustrativePrice(fill01: number): number {
   const t = Math.min(0.99, Math.max(0, fill01));
   return 0.000084 * Math.pow(1 / (1 - t * 0.92), 1.8);
@@ -157,16 +144,16 @@ export const frames: Frame[] = [
 
 export const preflight = [
   { id: "desk", label: "This desk does not trade. The kitten cannot touch your wallet." },
-  { id: "grad", label: "Liquidity locks only if the curve actually sells out." },
+  { id: "grad", label: "A lock drawn on a website is not a lock. Read the pool, not the poster." },
   { id: "ca", label: "The address is the name. A ticker is a costume anyone can sew." },
-  { id: "tax", label: "A creator tax, if there is one, freezes at launch. It does not grow." },
+  { id: "tax", label: "This page will not invent a tax. Read the launch, not the reel." },
 ] as const;
 
 export const facts: { term: string; detail: string }[] = [
-  { term: "Venue", detail: "Pons v2. The public buys a curve. Pons never holds the wallet." },
-  { term: "Chain", detail: "Robinhood Chain, id 4663. The water is on this chain only." },
-  { term: "After the curve", detail: "Sell-out graduates into a Uniswap v4 pool. Reserved tokens and what the curve collected seed it." },
-  { term: "Lock", detail: "That liquidity locks. A padlock drawn on a website is not the lock. The pool is." },
-  { term: "Open", detail: "Early buys can meet a tax near 99%. It falls to zero in about five seconds. Waiting is allowed." },
-  { term: "Fees", detail: "A trading fee can split across protocol, buyback, and creator. Buybacks, if used, vest for years." },
+  { term: "Venue", detail: "long.xyz. This website does not launch the token and does not hold a wallet." },
+  { term: "Chain", detail: "Robinhood Chain, id 4663." },
+  { term: "Address", detail: "Not on this page. When the launch is real, the line lands on X." },
+  { term: "Desk", detail: "The chart is a drawing. It does not quote, trade, or open a pool." },
+  { term: "Name", detail: "The contract address is the name. A ticker can be copied by anyone." },
+  { term: "Suit", detail: "The film stays in the theater. The box stays here." },
 ];

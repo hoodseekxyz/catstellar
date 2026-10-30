@@ -58,8 +58,7 @@ export function Logbook() {
             </h2>
             <p className="mt-4 text-mist">
               Eleven frames. Tap one to file it. It stays in this browser, not
-              on the chain. No pay, no rank, no price. The real burn comes later,
-              in the recorder, and only after the token exists.
+              on a chain. No pay, no rank, no price.
             </p>
             <label className="mt-8 block">
               <span className="text-xs tracking-widest text-mist uppercase">Call sign</span>

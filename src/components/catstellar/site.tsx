@@ -3,7 +3,6 @@ import { chapters, crew, links } from "@/data/mission";
 import { CurveDesk } from "@/components/catstellar/curve-desk";
 import { CrewBay } from "@/components/catstellar/crew-bay";
 import { Logbook } from "@/components/catstellar/logbook";
-import { ContractPlate } from "@/components/catstellar/contract-plate";
 
 const nav = [
   { href: "#mission", label: "Mission" },
@@ -92,9 +91,6 @@ function Hero() {
                 <ArrowUpRight className="size-4" aria-hidden="true" />
               </a>
             </div>
-            <div className="mt-6">
-              <ContractPlate />
-            </div>
           </div>
           <ol className="hidden gap-3 text-sm lg:col-span-4 lg:grid lg:justify-self-end">
             {[
@@ -126,8 +122,8 @@ function Mission() {
         </h2>
         <p className="mt-5 text-lg text-mist">
           A space epic came back as cats. The only name that cannot be copied is
-          the token address. Until it is posted, Catstellar is a reel — Pons,
-          Robinhood Chain, and a box nobody drops.
+          the token address. Until it is posted, Catstellar is a reel. The launch
+          is on long.xyz. The box stays.
         </p>
       </div>
       <div className="mt-16 grid gap-20">
@@ -209,12 +205,6 @@ function Close() {
           <li>
             <a className="inline-flex items-center gap-1 text-cream hover:text-gold" href={links.x}>
               x.com/catstellarX
-              <ArrowUpRight className="size-4" aria-hidden="true" />
-            </a>
-          </li>
-          <li>
-            <a className="inline-flex items-center gap-1 text-cream hover:text-gold" href={links.pons}>
-              Pons v2 docs
               <ArrowUpRight className="size-4" aria-hidden="true" />
             </a>
           </li>
