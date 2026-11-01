@@ -3,6 +3,7 @@ import * as Slider from "@radix-ui/react-slider";
 import { Area, AreaChart, ReferenceLine, ResponsiveContainer, XAxis, YAxis } from "recharts";
 import {
   chain,
+  contracts,
   curveSeries,
   facts,
   formatPicture,
@@ -193,14 +194,28 @@ export function CurveDesk() {
         <div className="mt-16 grid gap-8 border-t border-line pt-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <p className="text-xs tracking-widest text-gold uppercase">Token</p>
-            <p className="mt-3 font-display text-3xl italic sm:text-4xl">Address not on this page.</p>
-            <p className="mt-3 text-mist">
-              When the launch is real, the line lands on{" "}
-              <a className="text-cream underline decoration-line underline-offset-4 hover:text-gold" href={links.x}>
-                @catstellarX
-              </a>
-              . Until then, a ticker is a costume. Nothing here is the token.
-            </p>
+            {contracts.token ? (
+              <>
+                <p className="mt-3 font-display text-3xl italic sm:text-4xl">This line is the cat.</p>
+                <a
+                  href={`${contracts.explorer}${contracts.token}`}
+                  className="mt-3 block text-sm break-all text-cream underline decoration-line underline-offset-4 hover:text-gold"
+                >
+                  {contracts.token}
+                </a>
+              </>
+            ) : (
+              <>
+                <p className="mt-3 font-display text-3xl italic sm:text-4xl">Address not on this page.</p>
+                <p className="mt-3 text-mist">
+                  When the launch is real, the line lands on the splash and on{" "}
+                  <a className="text-cream underline decoration-line underline-offset-4 hover:text-gold" href={links.x}>
+                    @catstellarX
+                  </a>
+                  . Until then, a ticker is a costume.
+                </p>
+              </>
+            )}
           </div>
           <fieldset className="lg:col-span-7">
             <legend className="text-xs tracking-widest text-mist uppercase">

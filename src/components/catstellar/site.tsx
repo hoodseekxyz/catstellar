@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { chapters, crew, links } from "@/data/mission";
 import { CurveDesk } from "@/components/catstellar/curve-desk";
+import { ContractPlate } from "@/components/catstellar/contract-plate";
 import { CrewBay } from "@/components/catstellar/crew-bay";
 import { Logbook } from "@/components/catstellar/logbook";
 
@@ -91,6 +92,7 @@ function Hero() {
                 <ArrowUpRight className="size-4" aria-hidden="true" />
               </a>
             </div>
+            <ContractPlate />
           </div>
           <ol className="hidden gap-3 text-sm lg:col-span-4 lg:grid lg:justify-self-end">
             {[

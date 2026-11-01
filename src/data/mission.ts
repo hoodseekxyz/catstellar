@@ -3,6 +3,15 @@ export const links = {
   site: "https://catstellar.xyz",
 } as const;
 
+/** Paste the long.xyz token address here. Nothing else. */
+export const contracts: {
+  token: string | null;
+  explorer: string;
+} = {
+  token: null,
+  explorer: "https://robin.etherscan.io/address/",
+};
+
 export const chain = {
   name: "Robinhood Chain",
   id: "4663",
