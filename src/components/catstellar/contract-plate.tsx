@@ -42,7 +42,7 @@ export function ContractPlate() {
       )}
       <p className="mt-3 text-sm text-mist">
         {value
-          ? "CATSTELLAR. This line is the token. A ticker without it is a costume."
+          ? "CATSTELLARX. Paired with SPCX. This line is the token."
           : "The address lands here when the launch is real. Until then, a ticker is a costume."}
       </p>
     </div>

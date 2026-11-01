@@ -8,7 +8,7 @@ export const contracts: {
   token: string | null;
   explorer: string;
 } = {
-  token: null,
+  token: "0x5CD18C07B920e5D3aE1ff9C12cEDD6A155421E18",
   explorer: "https://robin.etherscan.io/address/",
 };
 
