@@ -2,38 +2,28 @@
 pragma solidity 0.8.26;
 
 /// @title Catstellar Flight Recorder
-/// @notice Deploy on Robinhood Chain (4663) before or after the long.xyz launch.
-///         The owner binds the long.xyz token once. Binding reads LongLauncher's
-///         ticker record and the Doppler Airlock asset. It cannot be repeated.
+/// @notice Helper. Deploy this on Robinhood Chain (4663) before the long.xyz launch.
+///         The token comes later. The owner binds it once. Binding checks the Doppler
+///         Airlock that long.xyz uses: the pair asset must be SPCX, and the integrator
+///         must be long.xyz. It cannot be repeated.
 ///
-///         Socials are constants. They are not editable and they are not a link
-///         the token contract itself is required to store.
+///         Socials are constants. They are not editable.
 ///
-///         Mechanic: eleven stills. A wallet files each still once. Filing pulls
-///         a fixed token amount and burns it in the same transaction. This
-///         contract does not keep a balance, pay yield, or take a fee.
-///         Still 0 opens after bind. Each later still opens when the one before
-///         it has `quorum` distinct filings. long.xyz opens its pool at launch,
-///         so the last still does not wait on a second graduation step.
+///         Mechanic: eleven stills. A wallet files each still once. Filing pulls a
+///         fixed token amount and burns it in the same transaction. This contract
+///         does not keep a balance, pay yield, or take a fee. Still 0 opens after
+///         bind. Each later still opens when the one before it has `quorum` distinct
+///         filings. long.xyz opens its pool at launch, so the last still does not
+///         wait on a second graduation step.
 ///
 ///         Remix: compiler 0.8.26. Deploy with fileCost_ (wei, 18 decimals) and
-///         quorum_. After the long.xyz launch, call bind(token, ticker) with the
-///         ticker exactly as LongLauncher stored it. The holder approves this
-///         contract, then calls file(frameId). Renounce only after bind.
+///         quorum_. Try 1000 ether and 5. After the long.xyz launch, call bind with
+///         the token address only. The holder approves this contract, then calls
+///         file(frameId). Renounce only after bind.
 interface ILongToken {
     function transferFrom(address from, address to, uint256 amount) external returns (bool);
     function burn(uint256 amount) external;
     function balanceOf(address account) external view returns (uint256);
-}
-
-interface ILongLauncher {
-    struct TickerRecord {
-        address token;
-        uint48 deployedAt;
-        uint48 reservedUntil;
-    }
-
-    function getTickerRecord(string calldata ticker) external view returns (TickerRecord memory);
 }
 
 interface IAirlock {
@@ -56,10 +46,14 @@ interface IAirlock {
 contract CatstellarFlightRecorder {
     uint8 public constant FRAME_COUNT = 11;
     uint8 public constant LAST_FRAME = 10;
-    /// @notice long.xyz launcher. Verified LongLauncher on Robinhood Chain.
-    address public constant LONG_LAUNCHER = 0x22e99278308b393ea1260859b181ad7e78f5eeed;
-    /// @notice Doppler Airlock that LongLauncher.create uses.
+    /// @notice long.xyz launcher. Checksummed for solc.
+    address public constant LONG_LAUNCHER = 0x22e99278308B393ea1260859B181AD7E78f5eeED;
+    /// @notice Doppler Airlock that long.xyz launches through.
     address public constant AIRLOCK = 0xeb7C034704eF8Dcd2D32324c1545f62fB4aD0862;
+    /// @notice Robinhood Chain SPCX. The only pair this recorder accepts.
+    address public constant SPCX = 0x4a0E65A3EcceC6dBe60AE065F2e7bb85Fae35eEa;
+    /// @notice Integrator stamped on long.xyz launches.
+    address public constant LONG_INTEGRATOR = 0x92d435C96E63c43E12d6D0AB28f6b0B04072F765;
     uint256 public constant CHAIN_ID = 4663;
 
     string public constant SITE = "https://catstellar.xyz";
@@ -70,6 +64,7 @@ contract CatstellarFlightRecorder {
     error AlreadyBound();
     error NotBound();
     error NotALongLaunch();
+    error NotSpcxPair();
     error UnknownFrame();
     error FrameClosed();
     error AlreadyFiled();
@@ -78,19 +73,18 @@ contract CatstellarFlightRecorder {
     error TransferFailed();
     error ShortPull();
 
-    /// @notice Wei of the long.xyz token burned per filing. Immutable.
+    /// @notice Wei of the token burned per filing. Immutable.
     uint256 public immutable fileCost;
     /// @notice Distinct filings required on a still before the next one opens.
     uint32 public immutable quorum;
 
     address public owner;
     address public token;
-    string public ticker;
 
     uint32[11] public filings;
     mapping(uint8 frameId => mapping(address filer => bool filed)) public hasFiled;
 
-    event Bound(address indexed token, address indexed pool, address indexed numeraire, string ticker);
+    event Bound(address indexed token, address indexed pool, address indexed numeraire);
     event Filed(uint8 indexed frameId, address indexed filer, uint32 filings, uint256 burned);
     event FrameOpened(uint8 indexed frameId);
     event OwnershipRenounced(address indexed previousOwner);
@@ -116,21 +110,17 @@ contract CatstellarFlightRecorder {
         return (SITE, X_SOCIAL);
     }
 
-    /// @notice Bind the long.xyz token. Once.
-    /// @param ticker_ The ticker LongLauncher stored. CATSTELLAR was free when this was written. Pass it exactly.
-    function bind(address token_, string calldata ticker_) external onlyOwner {
+    /// @notice Bind the long.xyz token. Once. It must be paired with SPCX.
+    function bind(address token_) external onlyOwner {
         if (token != address(0)) revert AlreadyBound();
-        if (token_ == address(0) || bytes(ticker_).length == 0) revert NotALongLaunch();
-
-        ILongLauncher.TickerRecord memory rec = ILongLauncher(LONG_LAUNCHER).getTickerRecord(ticker_);
-        if (rec.token != token_ || rec.deployedAt == 0) revert NotALongLaunch();
+        if (token_ == address(0)) revert NotALongLaunch();
 
         IAirlock.AssetData memory asset = IAirlock(AIRLOCK).getAssetData(token_);
-        if (asset.numeraire == address(0) || asset.pool == address(0)) revert NotALongLaunch();
+        if (asset.integrator != LONG_INTEGRATOR || asset.pool == address(0)) revert NotALongLaunch();
+        if (asset.numeraire != SPCX) revert NotSpcxPair();
 
         token = token_;
-        ticker = ticker_;
-        emit Bound(token_, asset.pool, asset.numeraire, ticker_);
+        emit Bound(token_, asset.pool, asset.numeraire);
     }
 
     /// @notice Drop the owner key. Call this after bind, never before.
